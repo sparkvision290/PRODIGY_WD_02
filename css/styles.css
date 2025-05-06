@@ -1,0 +1,196 @@
+:root {
+    --primary: #1a1a2e;
+    --secondary: #16213e;
+    --accent: #0f3460;
+    --highlight: #e94560;
+    --text: #f1f1f1;
+    --lap-even: rgba(15, 52, 96, 0.3);
+    --lap-odd: rgba(25, 25, 46, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: transparent;
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.stopwatch-container {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.branding {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.branding h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    color: var(--highlight);
+}
+
+.tagline {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.display {
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: 300;
+    margin: 20px 0;
+    letter-spacing: 2px;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.btn {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.control-btn {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.control-btn:hover {
+    background: var(--highlight);
+    transform: scale(1.1);
+}
+
+#startBtn {
+    background: var(--highlight);
+}
+
+.laps-container {
+    margin-top: 30px;
+}
+
+.laps-container h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.laps-list {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.lap-item {
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.lap-item:nth-child(even) {
+    background: var(--lap-even);
+}
+
+.lap-item:nth-child(odd) {
+    background: var(--lap-odd);
+}
+
+.lap-number {
+    font-weight: bold;
+    color: var(--highlight);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--highlight);
+    border-radius: 5px;
+}
+
+@media (max-width: 500px) {
+    .display {
+        font-size: 2.5rem;
+    }
+    
+    .btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+}
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(26, 26, 46, 0.7);
+    backdrop-filter: blur(2px);
+}

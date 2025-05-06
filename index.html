@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Stopwatch</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop id="bgVideo">
+            <source src="image/video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    <div class="stopwatch-container">
+        <div class="branding">
+            <h1>Abhinav's</h1>
+            <p class="tagline">Precision Timekeeping</p>
+        </div>
+        
+        <div class="display">
+            <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>.<span id="milliseconds">00</span>
+        </div>
+        
+        <div class="controls">
+            <button id="startBtn" class="btn control-btn">
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="pauseBtn" class="btn control-btn">
+                <i class="fas fa-pause"></i>
+            </button>
+            <button id="resetBtn" class="btn control-btn">
+                <i class="fas fa-stop"></i>
+            </button>
+            <button id="lapBtn" class="btn control-btn">
+                <i class="fas fa-flag"></i>
+            </button>
+        </div>
+        
+        <div class="laps-container">
+            <h3>Lap Times</h3>
+            <div id="laps" class="laps-list"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
